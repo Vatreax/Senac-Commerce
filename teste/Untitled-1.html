@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Produto</title>
+    <style>
+        .product-container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
+        .product-img {
+            max-width: 100%;
+            height: auto;
+        }
+        .rating {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="product-container">
+        <h1 id="product-title"></h1>
+        <img id="product-image" class="product-img" alt="Imagem do produto">
+        <p id="product-description"></p>
+        <p><strong>Preço: $<span id="product-price"></span></strong></p>
+        <div class="rating">
+            <span id="product-rating"></span> (<span id="product-rating-count"></span> avaliações)
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
