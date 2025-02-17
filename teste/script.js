@@ -24,21 +24,72 @@ async function carregarProduto() {
                 <p>Preço: $<span class="prod-price">${product.price.toFixed(2)}</span></p>
                 <label for="quantity">Quantidade:</label>
                 <input type="number" id="quantity" min="1" value="1" />
-                <p>Total: $<span id="total-price">${product.price.toFixed(2)}</span></p>
+
             </div>
         `;
-
+        
         document.querySelector(".prod-container").innerHTML = produto;
-
-        document.getElementById("quantity").addEventListener("input", function() {
-            const quantidade = parseInt(this.value);
-            const total = (product.price * quantidade).toFixed(2);
-            document.getElementById("total-price").textContent = total;
-        });
 
     } catch (error) {
         console.error("Erro ao carregar o produto:", error);
     }
 }
 
-document.addEventListener("DOMContentLoaded", carregarProduto);
+async function formCompra() {
+    const formulario = `
+    <form name="formCarrinho">
+        <fieldset>
+            <div class="containerInput">
+                <label for="cep">Cep:</label>
+                <input type="text" id="cep" name="cep" placeholder="79000-000" maxlength="10" required>
+            </div>
+            <div class="containerInput">
+                <label for="estado">Estado:</label>
+                <input type="text" id="estado" name="estado" placeholder="estado" required>
+            </div>
+            <div class="containerInput">
+                <label for="cidade">Cidade:</label>
+                <input type="text" id="cidade" name="cidade" placeholder="cidade" required>
+            </div>
+            <div class="containerInput">
+                <label for="logradouro">Logradouro:</label>
+                <input type="text" id="logradouro" name="logradouro" placeholder="logradouro" required>
+            </div>
+            <p>Total: $<span id="total-price">${product.price.toFixed(2)}</span></p>
+            <div class="ctaForm">
+                <button type="submit">Comprar</button>
+            </div>
+        </fieldset>
+    </form>
+    `;
+    document.querySelector(".form-container").innerHTML = formulario;
+
+    const formCarrinho = document.forms['formCarrinho'];
+
+    formCarrinho.addEventListener('input', async (event) => {
+        if (event.target === formCarrinho.cep) {
+            const dadosCep = await fetch(`https://viacep.com.br/ws/${event.target.value}/json/`).then(res => res.json());
+            if (dadosCep.uf && dadosCep.localidade && dadosCep.logradouro) {
+                formCarrinho.estado.value = dadosCep.uf;
+                formCarrinho.cidade.value = dadosCep.localidade;
+                formCarrinho.logradouro.value = dadosCep.logradouro;
+            }
+        } else if (formCarrinho.estado.value && formCarrinho.cidade.value && formCarrinho.logradouro.value) {
+            const endereco = await fetch(`https://viacep.com.br/ws/${formCarrinho.estado.value.toLowerCase()}/${formCarrinho.cidade.value.toLowerCase()}/${formCarrinho.logradouro.value.toLowerCase()}/json/`)
+            .then(res => res.json());
+            if (endereco && endereco.length > 0) {
+                formCarrinho.cep.value = endereco[0].cep;
+            }
+        }
+        
+        // Total
+        document.getElementById("quantity").addEventListener("input", function() {
+            const quantidade = parseInt(this.value);
+            const total = (product.price * quantidade).toFixed(2);
+            document.getElementById("total-price").textContent = total;
+        });
+
+    });
+}
+
+document.addEventListener("DOMContentLoaded", carregarProduto(), formCompra());

@@ -1,6 +1,9 @@
 .prod-container {
+    position: relative;
+    left: 39%;
+    
+    
     width: 20%;
-    margin: 0 auto;
     text-align: center;
     border: 1px solid #ddd;
     border-radius: 10px;
@@ -14,10 +17,8 @@
 .prod-img {
     width: 60%;
     height: auto;
-    grid-row: 1 / 2;  
     justify-self: center;
     border-radius: 10px;
-    
     position: relative;
     top: 35%;
     right: 10%;
@@ -51,4 +52,34 @@
     padding: 1%;
     border-radius: 1%;
     border: 1px solid #ddd;
+}
+
+form{
+    margin-top: 5%;
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+    left: 42.8%;
+    text-align: center;
+    align-items: center;
+}
+
+fieldset {
+    padding: 0.1% auto;
+    font-size: 14px;
+    text-align: center;
+    width: fit-content;
+    border: 1px solid #ddd;
+    box-shadow: 1px 1px 9px 0.1px black;
+}
+
+fieldset input,button{
+    margin-top: 10%;
+    width: 66%;
+}
+
+fieldset button{
+    margin-top: 10%;
+    width: 40%;
 }
