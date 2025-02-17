@@ -1,3 +1,11 @@
+// Explicando passo a passo para mim mesmo, e quem for ver essa branch
+// 1 - ID Produto: Usando o localStorage, é possivel guardar o ID vindo de outra tela; Depois o getItem para recupera-lo.
+// 2 - Função fetch para fazer uma requisição para a API; Usando await para aguardar a a resposta da API.
+// 3 - HTML dinâmico para exibição do produto.
+// 4 - Evento para atualizar o preço total.
+// 5 - Captura de erros, caso a requisição falhe por exemplo.
+// 6 - Quando o DOM for carregado, é ativada a função carregarProduto.
+
 async function carregarProduto() {
     const id_produto = localStorage.getItem('id_produto'); 
     if (!id_produto) {
