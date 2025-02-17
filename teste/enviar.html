@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escolher Produto</title>
+</head>
+<body>
+    <h1>Escolha um produto para ver detalhes:</h1>
+    <ul>
+        <li><button onclick="enviarProduto(1)">Produto 1</button></li>
+        <li><button onclick="enviarProduto(2)">Produto 2</button></li>
+        <li><button onclick="enviarProduto(3)">Produto 3</button></li>
+    </ul>
+
+    <script>
+            //Explicando o Script:
+            // Armazenar o ID do produto no localStorage 
+            // Redireciona para a página do Carrinho
+        function enviarProduto(id) {
+  
+            localStorage.setItem('id_produto', id);
+             
+            window.location.href = 'carrinho.html';
+        }
+    </script>
+</body>
+</html>
