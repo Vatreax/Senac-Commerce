@@ -1,28 +1,80 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Escolher Produto</title>
+    <title>Seleção de Produtos</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Escolha um produto para ver detalhes:</h1>
-    <ul>
-        <li><button onclick="enviarProduto(1)">Produto 1</button></li>
-        <li><button onclick="enviarProduto(2)">Produto 2</button></li>
-        <li><button onclick="enviarProduto(3)">Produto 3</button></li>
-    </ul>
+    <h1>Seleção de Produtos</h1>
+    
+    <div>
+        <label for="num-products">Quantos produtos você deseja adicionar ao carrinho?</label>
+        <input type="number" id="num-products" min="1" max="20" value="1">
+    </div>
+
+    <div id="products-selection"></div>
+
+    <button id="go-to-cart" disabled>Ir para o Carrinho</button>
 
     <script>
-            //Explicando o Script:
-            // Armazenar o ID do produto no localStorage 
-            // Redireciona para a página do Carrinho
-        function enviarProduto(id) {
-  
-            localStorage.setItem('id_produto', id);
-             
-            window.location.href = 'carrinho.html';
+        // Função para carregar os produtos de 1 a 20 para o usuário selecionar
+        function carregarProdutosParaSelecao() {
+            const numProductsInput = document.getElementById('num-products');
+            const numProducts = parseInt(numProductsInput.value);
+            const productsSelection = document.getElementById('products-selection');
+            productsSelection.innerHTML = ''; // Limpar a seleção anterior
+
+            // Criar inputs para selecionar os produtos
+            for (let id = 1; id <= numProducts; id++) {
+                const productDiv = document.createElement('div');
+                const label = document.createElement('label');
+                label.textContent = `Produto ${id}`;
+                const input = document.createElement('input');
+                input.type = 'checkbox';
+                input.id = `product-${id}`;
+                productDiv.appendChild(label);
+                productDiv.appendChild(input);
+                productsSelection.appendChild(productDiv);
+            }
+
+            // Habilitar o botão "Ir para o Carrinho" apenas se algum produto for selecionado
+            document.getElementById('go-to-cart').disabled = false;
         }
+
+        // Função para coletar os IDs dos produtos selecionados
+        function obterProdutosSelecionados() {
+            const produtosSelecionados = [];
+            const numProducts = parseInt(document.getElementById('num-products').value);
+            
+            for (let id = 1; id <= numProducts; id++) {
+                const checkbox = document.getElementById(`product-${id}`);
+                if (checkbox.checked) {
+                    produtosSelecionados.push(id);
+                }
+            }
+
+            return produtosSelecionados;
+        }
+
+        // Função para armazenar os produtos no localStorage e redirecionar para o carrinho
+        function irParaCarrinho() {
+            const produtosSelecionados = obterProdutosSelecionados();
+            if (produtosSelecionados.length > 0) {
+                localStorage.setItem('produtos_no_carrinho', JSON.stringify(produtosSelecionados));
+                window.location.href = "carrinho.html"; // Redireciona para a tela do carrinho
+            } else {
+                alert('Selecione pelo menos um produto!');
+            }
+        }
+
+        // Adicionar os eventos
+        document.getElementById('num-products').addEventListener('input', carregarProdutosParaSelecao);
+        document.getElementById('go-to-cart').addEventListener('click', irParaCarrinho);
+
+        // Carregar os produtos de 1 a 20 ao carregar a página
+        window.onload = carregarProdutosParaSelecao;
     </script>
 </body>
 </html>
