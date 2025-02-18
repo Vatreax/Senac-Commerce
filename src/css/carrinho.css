@@ -1,33 +1,49 @@
-.prod-container {
-    position: relative;
-    left: 39%;
-    
-    
-    width: 20%;
-    text-align: center;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 1%;
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    grid-template-rows: repeat(2, auto);
-    box-shadow: 1px 1px 7px 0.1px black;
-    margin-bottom: 5%;
+h1{
+    font-size: x-large;
+    margin-left: 1%;
+    font-weight: 500;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-.prod-img {
-    width: 60%;
-    height: auto;
-    justify-self: center;
+.container-conteudo{
+    display: grid;
+    grid-template-columns: 70% 37%;
+
+}
+
+.prod-container {
+    grid-column: 1;
+    position: relative;
+    left: 3%;
+    width: 30%;
+    text-align: center;
+
+    justify-content: center;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 1% 1%;
+    display: grid;
+    grid-template-columns: 35% 25%;
+    grid-template-rows: repeat(2, auto);
+    box-shadow: 1px 1px 7px 0.1px black;
+    margin-bottom: 2%;
+}
+
+#prod-img{
+    width: 90px;
+    height: 90px;
+    
     border-radius: 10px;
     position: relative;
-    top: 50%;
+    top: 30%;
 }
 
 .prod-title {
     grid-column: 2;
     grid-row: 1;
     font-size: 14px;
+    width: fit-content;
+    height: fit-content;
     font-weight: bold;
     text-align: left;
 }
@@ -39,6 +55,10 @@
 
     position: relative;
     bottom: 10%;
+}
+
+.price-container > input{
+    width: 100%;
 }
 
 .prod-price {
@@ -55,7 +75,9 @@
 }
 
 form {
-    margin-top: 5%;
+    grid-column: 2;
+    position: relative;
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -85,7 +107,7 @@ label {
 }
 
 fieldset input {
-    width: 100%;
+    width: 70%;
     padding: 10px;
     font-size: 14px;
     margin-top: 5px;
@@ -103,3 +125,4 @@ fieldset button {
     border-radius: 4px;
     cursor: pointer;
 }
+

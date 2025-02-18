@@ -13,7 +13,7 @@ async function carregarProdutos() {
             return `
                 <div class="prod-container" data-id="${product.id}">
                     <h1 class="prod-title">${product.title}</h1>
-                    <img class="prod-img" src="${product.image}" alt="Imagem do produto">
+                    <img class="prod-img" id="prod-img" src="${product.image}" alt="Imagem do produto">        
                     <div class="price-container">
                         <p>Preço: $<span class="prod-price">${product.price.toFixed(2)}</span></p>
                         <input type="number" id="quantity-${product.id}" min="1" value="1" class="prod-quantity" />
@@ -33,6 +33,8 @@ async function carregarProdutos() {
 
     formCompra();
 }
+
+
 
 function updateTotal() {
     totalGeral = 0;
