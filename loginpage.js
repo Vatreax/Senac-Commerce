@@ -1,12 +1,21 @@
-import Loginz from "./loginform";
+import loginform from "../components/loginform";
 
 
-async function pesquisarUser(){
+async function pesquisarUser(usuario){
 
 };
 
-async function validarUser(){
+async function validarUser(token, usuario ){
 // add algo para salvar o id
+    sessionStorage.clear;
+
+    const setToken = sessionStorage.setItem('userToken', token.token);
+    const setUser = sessionStorage.setItem('userId', await pesquisarUser(usuario)); 
+
+    if(setToken && setUser){
+        return true
+    }
+    
 };
 
 async function sessionUser(){
@@ -24,5 +33,7 @@ function enviarLogin(event){
     const senha = event.target.senha.value;
 };
 
-document.getElementById('login')
+document.getElementById('login').innerHTML = loginform();
+
+document.addEventListener('submit', enviarLogin);
 
