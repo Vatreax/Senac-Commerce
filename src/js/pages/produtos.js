@@ -53,6 +53,26 @@ async function listarProdutos() {
 }
 
 async function salvarProduto(id) {
+    
+    const response = await fetch(`https://fakestoreapi.com/products/${id}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    });
+    if (response.status === 200) {
+        document.getElementById('response').innerHTML = alert('Produto atualizado com sucesso!');
+    
+        let modal = document.getElementById('successModal');
+        document.querySelector('.close-btn').addEventListener('click', () => modal.style.display = 'none');
+
+        modal.style.display = 'flex';
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+    }
 }
 
 async function listarProdutoEdicao(){

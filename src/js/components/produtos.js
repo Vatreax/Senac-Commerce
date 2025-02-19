@@ -2,7 +2,7 @@ const produtoLista = ({ id, title, price, category,image }) => {
     return `
     <tr>
         <td>${title}</td>
-        <td>${price}</td>
+        <td>$${price}</td>
         <td>${category}</td>
         <td><img src="${image}" class="img_produto" alt="${title}"></td>
         <td>
