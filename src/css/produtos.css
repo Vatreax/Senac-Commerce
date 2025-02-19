@@ -48,16 +48,51 @@ th {
     background-color: #da190b;
 }
 
-.form {
-    margin-top: 1.5em;
+.form-group {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0.5em;
+    color: gray;
 }
 
-.form input[type=text], .form input[type=number] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
+.form-group > input {
+    border: none;
+    border-bottom: 1px blue solid;
+    outline: none;
 }
 
+.form-group > input:focus {
+    box-shadow: 0 2px 2px rgba(0, 120, 255, 0.4);
+}
+
+.textarea {
+    word-break: break-all;
+}
+
+.btn_voltar {
+    /* Botão de voltar com cor cinza */
+    background-color: #f2f2f2;
+    color: black;
+    padding: 8px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.btn_voltar:hover {
+    background-color: #e6e6e6;
+}
+
+.btn_salvar {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn_salvar:hover {
+    background-color: #45a049;
+}

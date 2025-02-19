@@ -37,17 +37,34 @@ const produtoDetalhe = ({ id, title, price, category, description, image }) => {
     return `
     <div class="container">
         <div class="form">
-            <label for="title">Titulo</label>
-            <input type="text" id="title" value="${title}">
-            <label for="price">Preço</label>
-            <input type="text" id="price" value="${price}">
-            <label for="category">Categoria</label>
-            <input type="text" id="category" value="${category}">
-            <label for="description">Descrição</label>
-            <textarea id="description">${description}</textarea>
-            <label for="image">Imagem</label>
-            <input type="text" id="image" value="${image}">
-            <button class="btn_salvar" id="salvar_${id}">Salvar</button>
+            <div class="form-group">
+                <label for="title">Titulo</label>
+                <input type="text" id="title" value="${title}">
+            </div>
+            <div class="form-group">
+                <label for="price">Preço</label>
+                <input type="text" id="price" value="${price}">
+            </div>
+            <div class="form-group">
+                <label for="category">Categoria</label>
+                <input type="text" id="category" value="${category}">
+            </div>
+            <div class="form-group">
+                <label for="description">Descrição</label>
+                <input type="text" class="textarea" id="description" value="${description}">
+            </div>
+            <div class="form-group">
+                <label for="image">Imagem</label>
+                <input type="text" id="image" value="${image}">
+            </div>
+            <div class="form-group">
+                <img src="${image}" class="img_produto" alt="${title}">
+                <input type="file" id="image" value="${image}">
+            </div>
+            <div class="form-group">
+                <button class="btn_voltar">Voltar</button>
+                <button class="btn_salvar" id="salvar_${id}">Salvar</button>
+            </div>
         </div>
     </div>
     `;
