@@ -33,6 +33,24 @@ const produtoTabela = (produtos) => {
     `;
 }
 
-const produtoDetalhe = ({ id, title, price, category, image }) => {};
+const produtoDetalhe = ({ id, title, price, category, description, image }) => {
+    return `
+    <div class="container">
+        <div class="form">
+            <label for="title">Titulo</label>
+            <input type="text" id="title" value="${title}">
+            <label for="price">Preço</label>
+            <input type="text" id="price" value="${price}">
+            <label for="category">Categoria</label>
+            <input type="text" id="category" value="${category}">
+            <label for="description">Descrição</label>
+            <textarea id="description">${description}</textarea>
+            <label for="image">Imagem</label>
+            <input type="text" id="image" value="${image}">
+            <button class="btn_salvar" id="salvar_${id}">Salvar</button>
+        </div>
+    </div>
+    `;
+};
 
 export { produtoLista, produtoDetalhe, produtoTabela };

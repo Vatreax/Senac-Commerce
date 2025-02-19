@@ -47,3 +47,17 @@ th {
 .btn_excluir:hover {
     background-color: #da190b;
 }
+
+.form {
+    margin-top: 1.5em;
+}
+
+.form input[type=text], .form input[type=number] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
