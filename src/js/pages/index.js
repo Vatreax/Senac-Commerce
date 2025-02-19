@@ -1,16 +1,44 @@
-async function pesquisar_categorias(){
-    const categorias = await fetch('https://fakestoreapi.com/products/categories').then(response=>response.json())
+async function filtro() {
+
+    const categorias = await fetch('https://fakestoreapi.com/products/categories')
+        .then(response => response.json());
+
+
     const newOption = categorias.map(itemAtual => `<option value="${itemAtual}">${itemAtual}</option>`);
-    const newSelect = `<select>
-    <option class = ''>Todos</option>
-    ${newOption}
-    </select>`;
+    const newSelect = `
+        <select id="categorySelect">
+            <option value="todos">Todos</option>
+            ${newOption}
+        </select>
+        <div id="products"></div>
+    `;
+
     document.body.innerHTML = newSelect;
+
+    async function exibirProdutos(categoria = "todos") {
+        let url = 'https://fakestoreapi.com/products';
+        if (categoria !== "todos") {
+            url += `/category/${categoria}`;
+        }
+
+        const produtos = await fetch(url).then(res => res.json());
+
+        const produtosHTML = produtos.map(produto => `
+            <div class="produto">
+                <img src="${produto.image}" alt="${produto.title}" width="100">
+                <p>${produto.title}</p>
+                <a href="produto.html?id=${produto.id}">Ver mais</a>
+            </div>
+        `);
+
+        document.getElementById("products").innerHTML = produtosHTML;
+    }
+
+    document.getElementById("categorySelect").addEventListener("change", (e) => {
+        exibirProdutos(e.target.value);
+    });
+
+    exibirProdutos();
 }
-pesquisar_categorias();
 
-// Preciso agora fazer com que ao estar em todos, 
-// ele vai aparecer todos os produtos, se filtrar por tal, ele aparece tal
-
-// Cada produto deverá conter uma url para redirecionar para a página 
-// única do produto através de um parâmetro de busca;
+filtro();
