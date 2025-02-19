@@ -4,7 +4,7 @@ const alert = ( message ) => {
         <div class="modal-content">
             <span class="close-btn">&times;</span>
             <div class="container">
-                <h2>Sucesso!</h2>
+                <h2 class="sucesso">Sucesso!</h2>
                 <p>${message}</p>
             </div>
         </div>

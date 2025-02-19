@@ -1,0 +1,49 @@
+.tabela {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid #ddd;
+    margin-top: 1.5em;
+    overflow-x: scroll;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.img_produto {
+    width: 100px;
+    height: 100px;
+}
+
+.btn_editar {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn_editar:hover {
+    background-color: #45a049;
+}
+
+.btn_excluir {
+    background-color: #f44336;
+    color: white;
+    padding: 8px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn_excluir:hover {
+    background-color: #da190b;
+}
