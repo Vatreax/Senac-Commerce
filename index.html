@@ -3,21 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./login.css">
     <title>Login</title>
 </head>
 <body>
-    <div class="login-container">
-        <h2>Login</h2>
-            <form for="loginz"></form>
-            <input type="text" id="email" placeholder="E-mail" required>
-
-            <form for="senha"></form>
-            <input type="password" id="senha" placeholder="Senha" required>
-            
-        <button onclick="fazerLogin()">Login</button>
-        <p class="voltar-login">Não tem uma conta? <a href="index.html">Faça cadastro aqui</a></p>
-    </div>
-
+    <div id="login"></div>
+    <script type="module" src="./src/js/pages/loginpage.js"></script>
 </body>
 </html>
