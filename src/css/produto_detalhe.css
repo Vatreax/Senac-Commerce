@@ -1,8 +1,8 @@
 #boxProduto {
     display: grid;
-    grid-template-columns: 100%; /* Uma coluna ocupando 100% da largura disponível */
-    grid-template-rows: auto auto auto auto; /* Ajusta o layout para as diferentes seções */
-    grid-gap: 10px; /* Espaçamento entre os elementos */
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto auto auto; 
+    grid-gap: 10px; 
     text-align: center;
     max-width: 600px;
     margin: 20px auto;
@@ -12,21 +12,21 @@
 }
 
 #boxProduto h1 {
-    font-size: 24px; /* Ajusta o tamanho da fonte do título */
-    margin-bottom: 10px; /* Espaçamento entre o título e o próximo elemento */
+    font-size: 24px; 
+    margin-bottom: 10px;
 }
 
 #boxProduto img {
-    width: 100%; /* A imagem ocupa 100% da largura do contêiner */
-    max-width: 300px; /* Limita a largura máxima da imagem */
-    height: auto; /* Mantém a proporção da imagem */
-    object-fit: cover; /* Preenche a área do contêiner mantendo a proporção */
-    margin: 0 auto; /* Centraliza a imagem */
+    width: 100%;
+    max-width: 300px; 
+    height: auto;
+    object-fit: cover; 
+    margin: 0 auto; 
 }
 
 #boxProduto p {
-    font-size: 16px; /* Tamanho da fonte do texto */
-    margin: 5px 0; /* Margem entre os parágrafos */
+    font-size: 16px;
+    margin: 5px 0; 
 }
 
 #irCarrinho {
@@ -41,7 +41,7 @@
     text-decoration: none;
     font-size: 18px;
     padding: 5px;
-    justify-content: center; /* Centraliza o conteúdo */
+    justify-content: center; 
     align-items: center;
     margin: 0 auto;
 }
