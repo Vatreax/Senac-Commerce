@@ -1,8 +1,52 @@
 *{
-    margin: 0;
+margin: 0;
 }
 .container {
     width: 90%;
     margin: auto;
     margin-top: 1rem;
+}
+
+/* Select de opções */
+#categorySelect{
+
+}
+
+
+/* Container de todos os produtos */
+#products{
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+justify-content: center;
+gap: 80px;
+background-color: aliceblue;
+border-width: 1vh;
+}
+
+
+/* Esse é pra cada produto separadamente */
+.produto{
+    display: flex;
+    margin: 20px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 20px;
+    width: 600px;
+    height: 480px;
+    border-style: solid;
+    border-color: black;
+    backdrop-filter: blur(2);
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    border-width: 1vh;
+
+}
+.produto img{
+    max-width: max-content;
+    max-height: max-content;
+    width: 600px;
+    height: 380px;
 }
