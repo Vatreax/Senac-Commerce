@@ -1,0 +1,64 @@
+#boxProduto {
+    display: grid;
+    grid-template-columns: 100%; /* Uma coluna ocupando 100% da largura disponível */
+    grid-template-rows: auto auto auto auto; /* Ajusta o layout para as diferentes seções */
+    grid-gap: 10px; /* Espaçamento entre os elementos */
+    text-align: center;
+    max-width: 600px;
+    margin: 20px auto;
+    border: 2px solid black;
+    box-shadow: 1px 1px 1px 0.5px black;
+    padding: 10px;
+}
+
+#boxProduto h1 {
+    font-size: 24px; /* Ajusta o tamanho da fonte do título */
+    margin-bottom: 10px; /* Espaçamento entre o título e o próximo elemento */
+}
+
+#boxProduto img {
+    width: 100%; /* A imagem ocupa 100% da largura do contêiner */
+    max-width: 300px; /* Limita a largura máxima da imagem */
+    height: auto; /* Mantém a proporção da imagem */
+    object-fit: cover; /* Preenche a área do contêiner mantendo a proporção */
+    margin: 0 auto; /* Centraliza a imagem */
+}
+
+#boxProduto p {
+    font-size: 16px; /* Tamanho da fonte do texto */
+    margin: 5px 0; /* Margem entre os parágrafos */
+}
+
+#irCarrinho {
+    background-image: linear-gradient(135deg, rgb(7, 100, 33) 0px, rgb(50, 158, 80) 100%);
+    border-radius: 30px;
+    color: white;
+    column-gap: 5px;
+    cursor: pointer;
+    display: flex;
+    height: 40px;
+    width: 160px;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 5px;
+    justify-content: center; /* Centraliza o conteúdo */
+    align-items: center;
+    margin: 0 auto;
+}
+
+#irCarrinho:hover {
+    transform: scale(1.05);
+}
+
+#favoritar {
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: black;
+    margin-top: 10px;
+}
+
+#favoritar.favoritado {
+    color: #ff1493; 
+}

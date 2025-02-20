@@ -27,7 +27,7 @@ async function filtro() {
             <div class="produto">
                 <img src="${produto.image}" alt="${produto.title}" width="100">
                 <p>${produto.title}</p>
-                <a href="produto.html?id=${produto.id}">Ver mais</a>
+                <a href="detalhe_produto.html?id=${produto.id}">Ver mais</a>
             </div>
         `);
 
