@@ -78,10 +78,18 @@ function formCompra() {
     document.querySelector(".form-container").innerHTML = formHTML;
     const formCarrinho = document.forms['formCarrinho'];
 
-    formCarrinho.addEventListener('submit', (e) => {
-        e.preventDefault();
-        alert(`Compra realizada com sucesso!\nValor Total: $${totalGeral.toFixed(2)}`);
-    });
+    formCarrinho.addEventListener('submit') {
+        let Token = sessionStorage.getItem(userToken)
+
+
+        if (sessionStorage.getItem(Token) !== null) {
+            console.log("A variável existe na sessionStorage!");
+        } else {
+            console.log("A variável não existe na sessionStorage.");
+        }
+                alert(`Compra realizada com sucesso!\nValor Total: $${totalGeral.toFixed(2)}`);
+
+    };
 
     formCarrinho.cep.addEventListener('input', async (e) => {
         const dadosCep = await (await fetch(`https://viacep.com.br/ws/${e.target.value}/json/`)).json();
