@@ -28,7 +28,6 @@ async function carregarProdutos() {
 
     containerWrapper.innerHTML = produtos.join("");
 
-
     const removeBtns = document.querySelectorAll(".remove-btn");
     removeBtns.forEach(button => {
         button.addEventListener("click", (e) => {
