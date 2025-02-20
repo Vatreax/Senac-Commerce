@@ -28,7 +28,7 @@ async function carregarProdutos() {
 
     containerWrapper.innerHTML = produtos.join("");
 
-    // Adicionar evento para remover produto dos favoritos
+
     const removeBtns = document.querySelectorAll(".remove-btn");
     removeBtns.forEach(button => {
         button.addEventListener("click", (e) => {
@@ -44,17 +44,13 @@ async function carregarProdutos() {
     formCompra();
 }
 
-// Função para remover o produto dos favoritos
 function removerFavorito(produtoId) {
     let favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
 
-    // Filtra o produto a ser removido
     favoritos = favoritos.filter(id => id !== produtoId);
 
-    // Atualiza o localStorage
     localStorage.setItem('favoritos', JSON.stringify(favoritos));
 
-    // Recarrega a página para refletir a mudança
     alert("Produto removido dos favoritos!");
     window.location.reload();
 }
