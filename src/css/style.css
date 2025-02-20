@@ -1,6 +1,9 @@
 *{
 margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
 .container {
     width: 90%;
     margin: auto;
@@ -49,4 +52,15 @@ border-width: 1vh;
     max-height: max-content;
     width: 600px;
     height: 380px;
+}
+
+h2 {
+    color: black;
+    text-align: center;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }

@@ -1,0 +1,98 @@
+.tabela {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid #ddd;
+    margin-top: 1.5em;
+    overflow-x: scroll;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.img_produto {
+    width: 10vw;
+    height: 10vw;
+}
+
+.btn_editar {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn_editar:hover {
+    background-color: #45a049;
+}
+
+.btn_excluir {
+    background-color: #f44336;
+    color: white;
+    padding: 8px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn_excluir:hover {
+    background-color: #da190b;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0.5em;
+    color: gray;
+}
+
+.form-group > input {
+    border: none;
+    border-bottom: 1px blue solid;
+    outline: none;
+}
+
+.form-group > input:focus {
+    box-shadow: 0 2px 2px rgba(0, 120, 255, 0.4);
+}
+
+.textarea {
+    word-break: break-all;
+}
+
+.btn_voltar {
+    /* Botão de voltar com cor cinza */
+    background-color: #f2f2f2;
+    color: black;
+    padding: 8px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.btn_voltar:hover {
+    background-color: #e6e6e6;
+}
+
+.btn_salvar {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn_salvar:hover {
+    background-color: #45a049;
+}
