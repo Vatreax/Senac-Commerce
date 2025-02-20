@@ -1,0 +1,154 @@
+h1 {
+    font-size: 24px;
+    margin-left: 1%;
+    font-weight: 500;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.container-conteudo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.prod-container {
+    position: relative;
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+    justify-content: center;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 45% 60%; 
+    grid-template-rows: repeat(2, auto); 
+    box-shadow: 1px 1px 7px 0.1px black;
+    margin-bottom: 2%;
+}
+
+#prod-img {
+    width: 90px;
+    height: auto;
+    object-fit: cover; 
+    margin: 0 auto 10px; 
+}
+
+.prod-title {
+    grid-column: 2;
+    grid-row: 1;
+    font-size: 16px; 
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 10px; 
+}
+
+.price-container {
+    grid-column: 2;
+    grid-row: 2;
+    text-align: left;
+    margin-top: 10px;
+}
+
+.price-container > input {
+    width: 60%;
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.prod-price {
+    font-weight: 600;
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.remove-btn {
+    grid-column: 1;
+    grid-row: 2;
+    width: 100px;
+    height: 60px;
+    padding: 5px 10px;
+    background-color: #ff4d4d;
+    color: white;
+    font-size: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 10px;
+    object-fit: cover; 
+    margin: 0 auto 10px; 
+    position: relative;
+    top: 30%;
+}
+
+.remove-btn:hover {
+    background-color: #e60000;
+}
+
+
+#quantity {
+    width: 25%;
+    margin-left: 10px;
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+form {
+    grid-column: 2;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+fieldset {
+    padding: 20px;
+    font-size: 14px;
+    text-align: center;
+    width: 300px;
+    border: 1px solid #ddd;
+    box-shadow: 1px 1px 9px 0.1px black;
+}
+
+.containerInput {
+    margin-bottom: 15px;
+    width: 100%;
+    position: relative;
+}
+
+label {
+    font-size: 14px;
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+fieldset input {
+    width: 70%;
+    padding: 10px;
+    font-size: 14px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+fieldset button {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    margin-top: 10%;
+    background-color: #4c7096;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+fieldset button:hover{
+    color: #2275ce;
+}
