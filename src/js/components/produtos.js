@@ -54,10 +54,6 @@ const produtoDetalhe = ({ id, title, price, category, description, image }) => {
                 <input type="text" class="textarea" id="description" value="${description}">
             </div>
             <div class="form-group">
-                <label for="image">Imagem</label>
-                <input type="text" id="image" value="${image}">
-            </div>
-            <div class="form-group">
                 <img src="${image}" class="img_produto" alt="${title}">
                 <input type="file" id="image" value="${image}">
             </div>

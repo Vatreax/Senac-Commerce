@@ -4,7 +4,7 @@ import alert from "../components/alert.js";
 const token = sessionStorage.getItem('userId');
 
 if(token === null || token === undefined){
-    //window.location.href = '/login.html';
+    window.location.href = '/login.html';
 }
 
 async function getProdutos() {
@@ -53,12 +53,21 @@ async function listarProdutos() {
 }
 
 async function salvarProduto(id) {
+
+    let data = {
+        title: document.getElementById('title').value || '',
+        price: document.getElementById('price').value || '',
+        category: document.getElementById('category').value || '',
+        description: document.getElementById('description').value || '',
+        image: document.getElementById('image').value || ''
+    }
     
     const response = await fetch(`https://fakestoreapi.com/products/${id}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
         },
+        body: JSON.stringify(data)
     });
     if (response.status === 200) {
         document.getElementById('response').innerHTML = alert('Produto atualizado com sucesso!');
@@ -72,6 +81,9 @@ async function salvarProduto(id) {
                 modal.style.display = 'none';
             }
         }
+        setTimeout(() => {
+            window.location.href = './produtos.html';
+        }, 2000);
     }
 }
 
@@ -83,6 +95,7 @@ async function listarProdutoEdicao(){
     document.getElementById('app').innerHTML = produtoDetalhe(produto);
 
     document.querySelector('.btn_salvar').addEventListener('click', () => salvarProduto(id));
+    document.querySelector('.btn_voltar').addEventListener('click', () => window.location.href = './produtos.html');
 }
 
 if( window.location.search.includes('id') ){
